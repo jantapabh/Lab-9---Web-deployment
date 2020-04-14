@@ -7,4 +7,11 @@ app.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-app.listen(80,() => console.log('Server is Running'))
+app.get('/crash', (req, res) => {
+
+    console.log('Crash!!!!')
+    res.send('Crash')
+    process.exit(1)
+})
+
+app.listen(80,() => console.log('Server is Running at 80'))
