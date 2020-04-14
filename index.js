@@ -14,4 +14,4 @@ app.get('/crash', (req, res) => {
     process.exit(1)
 })
 
-app.listen(80,() => console.log('Server is Running at 80'))
+app.listen(process.env.PORT,() => console.log('Server is Running at ', process.env.PORT))
