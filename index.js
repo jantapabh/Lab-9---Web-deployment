@@ -1,17 +1,22 @@
 let express = require('express')
+const cors = require('cors')
 let app = express()
 
-app.get('/', (req, res) => {
+app.use(cors())
 
-    console.log('Hello Worls')
-    res.send('Hello JanTapa')
+app.get('/api', (req, res) => {
+
+    res.json({
+        message: 'Engineering Computer',
+        users: [{
+          id: 1,
+          name: 'Jantapa Binheem'
+        }, {
+          id: 2,
+          name: 'Sufairee Leeadum'
+        }]
+      })
 })
 
-app.get('/crash', (req, res) => {
-
-    console.log('Crash!!!!')
-    res.send('Crash')
-    process.exit(1)
-})
 
 app.listen(process.env.PORT,() => console.log('Server is Running at ', process.env.PORT))
