@@ -6,16 +6,18 @@ app.use(cors())
 
 app.get('/', (req, res) => {
 
-    res.json({
-        message: 'Engineering Computer',
-        users: [{
-          id: 1,
-          name: 'Jantapa Binheem'
-        }, {
-          id: 2,
-          name: 'Sufairee Leeadum'
-        }]
-      })
+  res.send({
+    message: 'Hello Lab9',
+    users: [{
+      id: 1,
+      name: 'JanJoa',
+      studentID: 34
+    }, {
+      id: 2,
+      name: 'Sufairee'
+    }]
+  })
+
 })
 
 
